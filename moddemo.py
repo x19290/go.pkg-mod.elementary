@@ -79,13 +79,13 @@ def main():
     Path(pkgs[1] / r'11.go').write_text(_1DEMO)
     Path(pkgs[2] / r'22_test.go').write_text(_2TEST)
 
-    (pkgs[0] / r'go.mod').write_bytes(br'')
+    (pkgs[0] / r'go.mod').touch()
 
     for pkg in pkgs[1:]:
         check_call(r'go mod init %s' % _ODDMOD, pkg)
         check_call(r'go mod edit -replace 0=../0', pkg)
         check_call(r'git add -f go.mod', pkg)
-    check_call(r"git commit -a -m 'add -f [12]/go.mod'")
+    call(r"git commit -a -m 'add -f [12]/go.mod'")
 
     for pkg in pkgs[1:]:
         check_call(r'go mod tidy', pkg)
