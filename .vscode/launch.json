@@ -13,11 +13,18 @@
             "justMyCode": false,
         },
         {
-            "name": "example.com/1(go)",
+            "name": "11.go",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             "program": "1/11.go",
+        },
+        {
+            "name": "${file}.go",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${file}",
         },
         {
             "name": "${file}.py",
@@ -26,13 +33,6 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false,
-        },
-        {
-            "name": "${file}.go",
-            "type": "go",
-            "request": "launch",
-            "mode": "auto",
-            "program": "${file}",
         },
     ]
 }
