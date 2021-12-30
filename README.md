@@ -18,14 +18,14 @@ This all-in-one Python program does:
 
 1. create [012]/*, run [12]
    ```shell
-   git reset --hard ca.seed
+   git reset --hard da.seed
    ./moddemo.py
    ```
-1. see the differences after [moddemo.py](moddemo.py) ran
+1. see the changes after [moddemo.py](moddemo.py) ran
    ```shell
-   git diff ca.seed
-   git diff cb.go-mod/edit
-   git diff cc.go-mod/tidy
+   git diff da.seed
+   git diff db.go-mod/edit
+   git diff dc.go-mod/tidy
    ```
 
 ## Running from GUI
