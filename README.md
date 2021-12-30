@@ -1,7 +1,6 @@
 # A Golang Demo: Package Name and `go.mod`
 
 This demo shows you that:
-
 in the recent Go, the package name conventions are surprisingly liberal.
 
 ## [moddemo.py](moddemo.py)
@@ -14,20 +13,20 @@ This all-in-one Python program does:
 1. run 1/11.go that prints a datum exported from 00.go
 1. run 2/22_test.go that discards a datum exported from 00.go
 
-## Running from command lines
+## Demo through command lines
 
-1. to create [012]/*, run [12]:
+1. to create [012]/*, to run [12]:
    ```shell
-   git reset --hard ea.seed
+   git reset --hard fa.seed
    ./moddemo.py
    ```
 1. to see the changes after [moddemo.py](moddemo.py) ran:
    ```shell
-   git diff ea.seed
-   git diff eb.go-mod/edit
-   git diff ec.go-mod/tidy
+   git diff fa.seed
+   git diff fb.go-mod/edit
+   git diff fc.go-mod/tidy
    ```
 
-## Running from GUI
+## Demo through GUI
 
 .vscode/*.json are ready for you.
