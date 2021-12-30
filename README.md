@@ -16,16 +16,16 @@ This all-in-one Python program does:
 
 ## Running from command lines
 
-1. create [012]/*, run [12]
+1. to create [012]/*, run [12]:
    ```shell
-   git reset --hard da.seed
+   git reset --hard ea.seed
    ./moddemo.py
    ```
-1. see the changes after [moddemo.py](moddemo.py) ran
+1. to see the changes after [moddemo.py](moddemo.py) ran:
    ```shell
-   git diff da.seed
-   git diff db.go-mod/edit
-   git diff dc.go-mod/tidy
+   git diff ea.seed
+   git diff eb.go-mod/edit
+   git diff ec.go-mod/tidy
    ```
 
 ## Running from GUI
