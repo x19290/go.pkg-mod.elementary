@@ -75,9 +75,9 @@ def main():
     for pkg in pkgs:
         nuke(pkg)
 
-    Path(pkgs[0] / r'00.go').write_text(_0IMPL)
-    Path(pkgs[1] / r'11.go').write_text(_1DEMO)
-    Path(pkgs[2] / r'22_test.go').write_text(_2TEST)
+    (pkgs[0] / r'00.go').write_text(_0IMPL)
+    (pkgs[1] / r'11.go').write_text(_1DEMO)
+    (pkgs[2] / r'22_test.go').write_text(_2TEST)
 
     (pkgs[0] / r'go.mod').touch()
 
