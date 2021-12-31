@@ -17,14 +17,14 @@ This all-in-one Python program does:
 
 1. to create [012]/*, to run [12]:
    ```shell
-   git reset --hard ga.seed
+   git reset --hard ia.seed
    ./moddemo.py
    ```
 1. to see the changes after [moddemo.py](moddemo.py) ran:
    ```shell
-   git diff ga.seed
-   git diff gb.go-mod/edit
-   git diff gc.go-mod/tidy
+   git diff ia.seed
+   git diff ib.go-mod/edit
+   git diff ic.go-mod/tidy
    ```
 
 ## Demo through GUI
