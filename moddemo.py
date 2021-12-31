@@ -64,9 +64,10 @@ def main():
                 rmtree(y)
     def call(command, distance=None):
         from subprocess import call
+        shell = isinstance(command, str)
         cwd = base / distance if distance else base
         report(r'%(cwd)s$ %(command)s' % locals())
-        return call(command, shell=True, cwd=cwd)
+        return call(command, shell=shell, cwd=cwd)
     def check_call(command, distance=None):
         status = call(command, distance)
         if status != 0:
@@ -87,7 +88,7 @@ def main():
         check_call(r'go mod init %s' % _ODDMOD, pkg)
         check_call(r'go mod edit -replace 0=../0', pkg)
         check_call(r'git add -f go.mod', pkg)
-    call(r'git commit -a -m "chore: add -f [12]/go.mod"')
+    call(r'git,commit,-a,-m,chore: add -f [12]/go.mod'.split(r','))
 
     for pkg in pkgs[1:]:
         check_call(r'go mod tidy', pkg)
