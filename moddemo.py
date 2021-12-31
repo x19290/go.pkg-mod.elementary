@@ -75,11 +75,13 @@ def main():
     for pkg in pkgs:
         nuke(pkg)
 
-    (pkgs[0] / r'00.go').write_text(_0IMPL)
-    (pkgs[1] / r'11.go').write_text(_1DEMO)
-    (pkgs[2] / r'22_test.go').write_text(_2TEST)
+    pkg0, pkg1, pkg2 = pkgs
 
-    (pkgs[0] / r'go.mod').touch()
+    (pkg0 / r'00.go').write_text(_0IMPL)
+    (pkg1 / r'11.go').write_text(_1DEMO)
+    (pkg2 / r'22_test.go').write_text(_2TEST)
+
+    (pkg0 / r'go.mod').touch()
 
     for pkg in pkgs[1:]:
         check_call(r'go mod init %s' % _ODDMOD, pkg)
