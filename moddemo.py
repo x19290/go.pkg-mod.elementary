@@ -87,7 +87,7 @@ def main():
         check_call(r'go mod init %s' % _ODDMOD, pkg)
         check_call(r'go mod edit -replace 0=../0', pkg)
         check_call(r'git add -f go.mod', pkg)
-    call(r"git commit -a -m 'chore: add -f [12]/go.mod'")
+    call(r'git commit -a -m "chore: add -f [12]/go.mod"')
 
     for pkg in pkgs[1:]:
         check_call(r'go mod tidy', pkg)
