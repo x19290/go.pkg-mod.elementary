@@ -22,8 +22,9 @@ This all-in-one Python program does:
    ```
 1. to see the changes after [moddemo.py](moddemo.py) ran:
    ```shell
-   git diff m0.seed
+   git diff m0.seed m1.go-mod/edit
    git diff m1.go-mod/edit
+   git diff
    git diff m2.go-mod/tidy
    ```
 
