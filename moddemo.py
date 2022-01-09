@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-_PKGS = r'012'
+_PKGS = r'01'
 
-_0IMPL = r'''
+_00IMPL = r'''
 package anyid
 
 const Exported = "*** hello ***"
 '''[1:]
 
-_1DEMO = '''
+_12DEMO = '''
 package main
 
 import (
@@ -21,7 +21,7 @@ func main() {
 }
 '''[1:]
 
-_2TEST = '''
+_01TEST = '''
 package anyid
 
 import (
@@ -76,25 +76,23 @@ def main():
     for pkg in pkgs:
         nuke(pkg)
 
-    pkg0, pkg1, pkg2 = pkgs
+    pkg0, pkg1 = pkgs
 
-    (pkg0 / r'00.go').write_text(_0IMPL)
-    (pkg1 / r'11.go').write_text(_1DEMO)
-    (pkg2 / r'22_test.go').write_text(_2TEST)
+    (pkg0 / r'00.go').write_text(_00IMPL)
+    (pkg0 / r'01_test.go').write_text(_01TEST)
+    (pkg1 / r'12.go').write_text(_12DEMO)
 
-    (pkg0 / r'go.mod').touch()
-
-    for pkg in pkgs[1:]:
+    for pkg in pkgs:
         check_call(r'go mod init %s' % _ODDMOD, pkg)
         check_call(r'go mod edit -replace 0=../0', pkg)
         check_call(r'git add -f go.mod', pkg)
-    call(r'git,commit,-a,-m,chore: add -f [12]/go.mod'.split(r','))
+    call(r'git,commit,-a,-m,chore: add -f */go.mod'.split(r','))
 
-    for pkg in pkgs[1:]:
+    for pkg in pkgs:
         check_call(r'go mod tidy', pkg)
 
+    check_call(r'go test ./...', r'0')
     check_call(r'go run .', r'1')
-    check_call(r'go test ./...', r'2')
     check_call(r'git diff')
 
 
