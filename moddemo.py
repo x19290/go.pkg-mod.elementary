@@ -78,9 +78,9 @@ def main():
 
     pkg0, pkg1 = pkgs
 
-    (pkg0 / r'00.go').write_text(_00IMPL)
+    (pkg0 / r'00_impl.go').write_text(_00IMPL)
     (pkg0 / r'01_test.go').write_text(_01TEST)
-    (pkg1 / r'12.go').write_text(_12DEMO)
+    (pkg1 / r'12_demo.go').write_text(_12DEMO)
 
     for pkg in pkgs:
         check_call(r'go mod init %s' % _ODDMOD, pkg)
