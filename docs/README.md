@@ -3,7 +3,7 @@
 This demo shows you that:
 in the recent Go, the package name conventions are surprisingly liberal.
 
-## [moddemo.py](moddemo.py)
+## [moddemo.py](../moddemo.py)
 
 This all-in-one Python program does:
 1. create 0/00.go, 0/01_test.go, 1/12.go, and */go.mod
@@ -20,7 +20,7 @@ This all-in-one Python program does:
    git reset --hard r0.seed
    ./moddemo.py
    ```
-1. to see the changes after [moddemo.py](moddemo.py) ran:
+1. to see the changes after [moddemo.py](../moddemo.py) ran:
    ```shell
    git diff r0.seed n1.go-mod/edit
    git diff r1.go-mod/edit
