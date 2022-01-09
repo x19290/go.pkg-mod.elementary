@@ -5,7 +5,8 @@ _PKGS = r'01'
 _00IMPL = r'''
 package anyid
 
-const Exported = "*** hello ***"
+const private = "*** private ***"
+const Public = "*** hello ***"
 '''[1:]
 
 _12DEMO = '''
@@ -17,7 +18,7 @@ import (
 )
 
 func main() {
-\tfmt.Println(z.Exported)
+\tfmt.Println(z.Public)
 }
 '''[1:]
 
@@ -26,11 +27,10 @@ package anyid
 
 import (
 \t"testing"
-\tz "0"
 )
 
 func Test0(*testing.T) {
-\t_ = z.Exported
+\t_, _ = private, Public
 }
 '''[1:]
 
